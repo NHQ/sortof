@@ -2,6 +2,17 @@
 
 This module returns several functions that sort/filter a list of objects by date string.  This module uses [moment](http://momentjs.com/), so your date values can also be moment objects.
 
+Given a list of objects that have a date value, you can filter by dates occuring:
+* today
+* tomorrow
+* this week
+* next week
+* within a week (today + 1 week)
+* this month
+* next month 
+* within a month (today + 1 month)
+* any range, given a start and end date
+
 This module works in Node.js and the browser, with Browserify.
 
 [![browser support](https://ci.testling.com/NHQ/sortof.png?duhhhhhh)](https://ci.testling.com/NHQ/sortof)
@@ -43,6 +54,10 @@ returns same for dates occuring tomorrow
 
 returns same for dates occuring within the current calendar week (beginning Sunday)
 
+#### nextWeek([ibid.])
+
+returns same for dates occuring next calendar week
+
 #### withinWeek([ibid.])
 
 returns same for dates occuring within a week, starting today
@@ -50,6 +65,10 @@ returns same for dates occuring within a week, starting today
 #### thisMonth(array, key, fmt [, month])
 
 returns same for dates occruing within the given calendar month. Defaults to this month.  The month param can be a number (0,11), or a string, the name of the month.
+
+#### nextMonth(array, key, fmt)
+
+return same for dates occuring next calenday month
 
 #### withinMonth(array, key, format)
 

@@ -8,14 +8,19 @@ var test = require('tape')
 var today = cal.moment().format(fmt).toString(fmt) // today should be this week
 var tomorrow = cal.moment().add('days', 1).format(fmt).toString(fmt)
 var yore = cal.moment().subtract('year', 2).format(fmt).toString()
+var nextWeek = cal.moment().add('weeks', 1).format(fmt).toString()
+var nextMonth = cal.moment().add('months', 1).format(fmt).toString()
 
 var lastYearsParties = [{}]
 lastYearsParties[0][key] = yore
-var happening = [{}, {}]
+var happening = [{}, {}, {}, {}]
 happening[0][key] = today
 happening[1][key] = tomorrow
+happening[2][key] = nextWeek
+happening[3][key] = nextMonth
 
 test('testing range', function(t){
+
   var begin = events[0][key]
   var end = events[events.length - 1][key]
   t.plan(2)
@@ -52,6 +57,17 @@ test('testing WITHIN week', function(t){
   t.equal(0, cal.withinWeek(lastYearsParties, key, fmt).length)
 })
 
+test('testing for next week', function(t){
+  t.plan(1)
+  if(cal.nextWeek(happening.splice(2,1), key, fmt).length === 1) t.pass('next week passed')
+
+})
+
+test('testing for next month', function(t){
+  t.plan(1)
+  if(cal.nextMonth(happening.splice(2,1), key, fmt).length === 1) t.pass('next month passed')
+
+})
 test('testing this month', function(t){
    t.plan(2)
    var events = [{}]

@@ -5,9 +5,11 @@ module.exports.sort = linearSort
 module.exports.today = today
 module.exports.tomorrow = tomorrow
 module.exports.thisWeek = thisWeek
+module.exports.nextWeek = nextWeek
 module.exports.thisMonth = thisMonth
 module.exports.withinWeek = withinWeek
 module.exports.withinMonth = withinMonth
+module.exports.nextMonth = nextMonth
 module.exports.range = range
 
 function range(events, key, fmt, begin, end){
@@ -25,43 +27,30 @@ function thisMonth(events, key, fmt, _month){
   var begin = moment().month(_month || moment().month()).startOf('month')
   var end = moment().month(_month || moment().month()).endOf('month')
   return range(events, key, fmt, begin, end)
-/*  return linearSort(events.reduce(function(p,e){
-  
-    var _a = moment(e[key], fmt)
-
-    if(_a.isAfter(begin) && _a.isBefore(end)) p.push(e)
-
-    return p
-  
-  },[]), key, fmt)
-*/
 }
 
+function nextMonth(events, key, fmt){
+  var begin = moment().add('months', 1).startOf('month')
+  var end = moment().add('months', 1).endOf('month')
+  return range(events, key, fmt, begin, end)
+} 
 
 function withinMonth(events, key, fmt){
   var nextMonth = moment().add('months', 1).hours(0).minutes(0).seconds(0)
   var begin = moment().startOf('month')
   return range(events, key, fmt, begin, nextMonth)
-/*  return linearSort(events.reduce(function(p,e){
-    var _a = moment(e[key], fmt)
-    if(_a.isBefore(nextMonth)) p.push(e)
-    return p
-  }, []), key, fmt)
-*/
 }
 
 function thisWeek(events, key, fmt, _week){
   var begin = moment().startOf('week')
   var end = moment().endOf('week')
   return range(events, key, fmt, begin, end)
-/*  return linearSort(events.reduce(function(p,e){
-  
-    var _a = moment(e[key], fmt)
-    if(_a.isAfter(begin) && _a.isBefore(end)) p.push(e)
-    return p
-  
-  },[]), key, fmt)
-*/
+}
+
+function nextWeek(events, key, fmt){
+  var begin = moment().add('weeks', 1).startOf('week')
+  var end = moment().add('weeks', 1).endOf('week')
+  return range(events, key, fmt, begin, end)
 }
 
 function withinWeek(events, key, fmt){
@@ -69,14 +58,6 @@ function withinWeek(events, key, fmt){
   var end = moment().add('weeks', 1).hours(0).minutes(0).second(0)
   var begin = moment().startOf('day')
   return range(events, key, fmt, begin, end)
-/*  return linearSort(events.reduce(function(p,e){
-  
-    var _a = moment(e[key], fmt)
-    if(_a.isBefore(weekFromNow)) p.push(e)
-    return p
-  
-  }, []), key, fmt)
-*/
 }
 
 
