@@ -1,6 +1,6 @@
 {
   "name": "sortof",
-  "version": "0.5.0",
+  "version": "0.6.0",
   "description": "sort lists of objects by date strings",
   "main": "sortByDate.js",
   "dependencies": {
