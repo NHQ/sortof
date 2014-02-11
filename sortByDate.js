@@ -63,8 +63,9 @@ function withinWeek(events, key, fmt){
 
 function today(events, key, fmt){
 
-  var tomorrow = moment().add('days', 1).hours(0).minutes(0).seconds(0)
-
+  var end = moment().add('days', 1).hours(0).minutes(0).seconds(0)
+  var begin = moment().startOf('day')
+  return range(events, key, fmt, begin, end)
   return linearSort(events.reduce(function(p,e,i,d){
     var _a = moment(e[key], fmt)
     if(_a.isBefore(tomorrow)) p.push(e)
