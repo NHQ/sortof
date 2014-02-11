@@ -96,7 +96,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:NHQ/sorta.git"
+    "url": "git@github.com:NHQ/sortof.git"
   },
   "keywords": [
     "date",
@@ -106,7 +106,7 @@
   "author": "Johnny Honestly <mostmodernist@gmail.com> (http://johnnyscript.us/)",
   "license": "BSD-2-Clause",
   "bugs": {
-    "url": "https://github.com/NHQ/sorta/issues"
+    "url": "https://github.com/NHQ/sortof/issues"
   },
-  "homepage": "https://github.com/NHQ/sorta"
+  "homepage": "https://github.com/NHQ/sortof"
 }
