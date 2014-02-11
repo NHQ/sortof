@@ -1,10 +1,10 @@
-## sorta
+## sortof
 
 This module returns several functions that sort/filter a list of objects by date string.  This module uses [moment](http://momentjs.com/), so your date values can also be moment objects.
 
 This module works in Node.js and the browser, with Browserify.
 
-[![browser support](https://ci.testling.com/NHQ/sorta.png?duhhhhhh)](https://ci.testling.com/NHQ/sorta)
+[![browser support](https://ci.testling.com/NHQ/sortof.png?duhhhhhh)](https://ci.testling.com/NHQ/sortof)
 
 ```
 npm install sorta
