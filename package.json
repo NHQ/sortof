@@ -9,7 +9,7 @@
   "devDependencies": {
     "tape": "~2.3.0"
   },
-  "testing": {
+  "testling": {
     "files": "test.js",
     "browsers": [
       "iexplore/6.0",
