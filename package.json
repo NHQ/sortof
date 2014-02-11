@@ -1,5 +1,5 @@
 {
-  "name": "sorta",
+  "name": "sortof",
   "version": "0.2.0",
   "description": "sort lists of objects by date strings",
   "main": "sortByDate.js",

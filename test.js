@@ -6,10 +6,14 @@ var key = 'starts_at';
 var test = require('tape')
 
 var today = cal.moment().format(fmt).toString(fmt) // today should be this week
+var tomorrow = cal.moment().add('days', 1).format(fmt).toString(fmt)
 var yore = cal.moment().subtract('year', 2).format(fmt).toString()
 
 var lastYearsParties = [{}]
 lastYearsParties[0][key] = yore
+var happening = [{}, {}]
+happening[0][key] = today
+happening[1][key] = tomorrow
 
 test('testing range', function(t){
   var begin = events[0][key]
@@ -21,6 +25,11 @@ test('testing range', function(t){
 
   // test a date should be outside the range
   t.equal(0, cal.range(lastYearsParties, key, fmt, begin, end).length)
+})
+
+test('testing for tomorrow', function(t){
+  t.plan(1)
+  if(cal.tomorrow(happening, key, fmt).length === 1) t.pass('tomorrow passed')
 })
 
 test('testing for this week', function(t){

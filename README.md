@@ -21,11 +21,7 @@ Others take an additional param.
 
 ### functions
 
-The module returns an object with the following member functions.  
-
-#### moment
-
-for convenience, this module returns the actual moment module.
+The module returns an object with the following member functions. They each filter and return a list. 
 
 #### sort(array, key, format)
 
@@ -38,6 +34,10 @@ returns an array of objects fliltered by the range (within the range).  The begi
 #### today(array, key, format)
 
 return an array of objects which have date-times that are Today
+
+#### tomorrow([ibid.])
+
+returns same for dates occuring tomorrow
 
 #### thisWeek([ibid.])
 
@@ -55,5 +55,8 @@ returns same for dates occruing within the given calendar month. Defaults to thi
 
 returns same for dates within the next month, starting today
 
+#### moment
+
+for convenience, this module returns the actual moment module.
 
 

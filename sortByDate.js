@@ -3,6 +3,7 @@ var moment = require('moment')
 module.exports.moment = moment
 module.exports.sort = linearSort
 module.exports.today = today
+module.exports.tomorrow = tomorrow
 module.exports.thisWeek = thisWeek
 module.exports.thisMonth = thisMonth
 module.exports.withinWeek = withinWeek
@@ -92,6 +93,11 @@ function today(events, key, fmt){
 
 }
 
+function tomorrow(events, key, fmt){
+  var start = moment().add('days', 1).hours(0).minutes(0).seconds(0)
+  var end = moment().add('days', 1).hours(23).minutes(59).seconds(59)
+  return range(events, key, fmt, start, end)
+}
 
 function linearSort(events, key, fmt){
 
