@@ -2,6 +2,8 @@
 
 This module returns several functions that sort list of objects by date strings.  This module uses [moment](http://momentjs.com/), so your date values can also be moment objects.
 
+This module works in Node.js and the browser, with Browserify.
+
 ```
 npm install sorta
 ```
