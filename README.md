@@ -4,6 +4,8 @@ This module returns several functions that sort/filter a list of objects by date
 
 This module works in Node.js and the browser, with Browserify.
 
+[![browser support](https://ci.testling.com/NHQ/sorta.png)](https://ci.testling.com/USER/PROJECT)
+
 ```
 npm install sorta
 ```
